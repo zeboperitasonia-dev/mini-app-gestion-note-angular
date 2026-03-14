@@ -1,0 +1,17 @@
+.carte-echec {
+  background-color: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #7f1d1d;
+}
+
+.carte-passable {
+  background-color: #ffedd5;
+  border: 2px solid #f97316;
+  color: #7c2d12;
+}
+
+.carte-reussite {
+  background-color: #dcfce7;
+  border: 2px solid #22c55e;
+  color: #14532d;
+}
