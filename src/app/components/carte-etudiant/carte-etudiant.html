@@ -1,16 +1,13 @@
-<div [ngClass]="getClasseCarte()" class="rounded-xl p-5 w-56 shadow-md">
+<div [ngClass]="getClasseCarte()" class="rounded-xl p-5 w-full shadow-md">
 
-  <!-- Nom complet -->
-  <h3 class="text-lg font-bold mb-1">
+  <h3 class="text-base md:text-lg font-bold mb-1">
     {{ etudiant.prenom }} {{ etudiant.nom }}
   </h3>
 
-  <!-- Classe -->
   <p class="text-sm font-semibold mb-3 opacity-70">
-    📚 {{ etudiant.classe }}
+     {{ etudiant.classe }}
   </p>
 
-  <!-- Notes -->
   <div class="flex flex-wrap gap-1 mb-3">
     @for (note of etudiant.notes; track $index) {
       <span class="bg-white/50 text-xs px-2 py-1 rounded-full font-medium">
@@ -19,12 +16,10 @@
     }
   </div>
 
-  <!-- Moyenne -->
   <p class="text-sm font-bold mb-3">
     Moyenne : {{ moyenne | number:'1.2-2' }}/20
   </p>
 
-  <!-- Badge statut -->
   @if (moyenne < 10) {
     <span class="bg-red-600 text-white text-xs px-3 py-1 rounded-full">
        Échec
@@ -39,12 +34,11 @@
     </span>
   }
 
-  <!-- Bouton supprimer -->
   <button
     (click)="onSupprimer()"
     class="mt-4 w-full bg-white/40 hover:bg-white/70 
            text-sm font-semibold py-2 rounded-lg transition-all">
-     Supprimer
+    🗑️ Supprimer
   </button>
 
 </div>

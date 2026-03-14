@@ -1,27 +1,29 @@
-<div class="min-h-screen bg-gray-50 p-8">
+<div class="min-h-screen bg-gray-50 p-4 md:p-8">
 
-  <h2 class="text-2xl font-bold text-blue-900 mb-6">
+  <h2 class="text-xl md:text-2xl font-bold text-blue-900 mb-6">
      Liste des Notes
   </h2>
 
-  <!-- Filtre par classe -->
+  <!-- Filtre -->
   <div class="mb-6">
-    <label class="text-gray-600 font-semibold mr-3">Filtrer par classe :</label>
+    <label class="text-gray-600 font-semibold mr-3 text-sm md:text-base">
+      Filtrer par classe :
+    </label>
     <select 
       [(ngModel)]="filtreClasse"
-      class="border border-gray-300 rounded-lg px-4 py-2 
-             bg-white text-gray-700 focus:outline-none focus:ring-2 
-             focus:ring-blue-500">
+      class="border border-gray-300 rounded-lg px-3 md:px-4 py-2 
+             bg-white text-gray-700 text-sm md:text-base
+             focus:outline-none focus:ring-2 focus:ring-blue-500">
       <option value="tous">Tous</option>
-      <option value="6ème">6ème</option>
-      <option value="5ème">5ème</option>
-      <option value="4ème">4ème</option>
-      <option value="3ème">3ème</option>
+      <option value="6eme">6ème</option>
+      <option value="5eme">5ème</option>
+      <option value="4eme">4ème</option>
+      <option value="3eme">3ème</option>
     </select>
   </div>
 
   <!-- Liste des étudiants -->
-  <div class="flex flex-wrap gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
     @for (etudiant of getEtudiantsFiltres(); track etudiant.id) {
       <app-carte-etudiant
         [etudiant]="etudiant"
@@ -31,9 +33,9 @@
     }
   </div>
 
-  <!-- Message si liste vide -->
+  <!-- Message si vide -->
   @if (getEtudiantsFiltres().length === 0) {
-    <div class="text-center text-gray-400 text-lg mt-12">
+    <div class="text-center text-gray-400 text-base md:text-lg mt-12">
        Aucun étudiant trouvé pour cette classe
     </div>
   }
